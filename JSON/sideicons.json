@@ -1,0 +1,26 @@
+[
+  {
+    "bgIcons": "../img/sidebar-icons-1.png",
+    "title": "Dead Island 2"
+  },
+  {
+    "bgIcons": "../img/sidebar-icons-2.png",
+    "title": "Honkai: Star Rail"
+  },
+  {
+    "bgIcons": "../img/sidebar-icons-3.png",
+    "title": "STAR WARS JEDI: Survivor™"
+  },
+  {
+    "bgIcons": "../img/sidebar-icons-4.png",
+    "title": "Redfall"
+  },
+  {
+    "bgIcons": "../img/sidebar-icons-5.png",
+    "title": "Age of Wonders 4"
+  },
+  {
+    "bgIcons": "../img/sidebar-icons-6.png",
+    "title": "Crime Boss: Rockay City"
+  }
+]
