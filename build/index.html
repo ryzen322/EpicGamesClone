@@ -307,13 +307,14 @@
 
     <!-- slide show -->
 
-    <div
+    <section
       class="mt-5 container mx-auto h-[35rem] w-full px-5 flex flex-col gap-4 md:h-[53.5rem] lg:flex-row lg:h-[25rem] 2xl:h-[40rem] 2xl:px-0"
     >
       <div
-        class="h-[90%] w-full flex items-center overflow-x-scroll gap-3 snap-x snap-mandatory scrollbar-hide lg:h-full lg:gap-0 2xl:w-4/5"
+        class="h-[90%] cursor-pointer w-full flex items-center overflow-x-scroll gap-3 snap-x snap-mandatory scrollbar-hide lg:h-full lg:gap-0 2xl:w-4/5"
+        id="mainSlideShow"
       >
-        <div
+        <!-- <div
           class="grow-0 shrink-0 h-full w-96 snap-center rounded-2xl md:w-[85%] relative overflow-hidden lg:w-[100%]"
           id="page-1"
         >
@@ -330,37 +331,64 @@
           </picture>
 
           <div
-            class="absolute flex flex-col gap-4 bottom-0 text-white pl-4 pr-11 pb-5 z-10 md:pl-10 md:pr-52 2xl:w-[30%] 2xl:pr-0 2xl:pb-12"
+            class="relative h-20 w-14 ml-auto right-0 top-0 flex justify-center items-center z-40 2xl:hidden"
+          >
+            <div
+              class="h-7 w-7 rounded-full bg-black border-2 border-white flex justify-center items-center text-white"
+            >
+              <span class="material-symbols-outlined text-white text-2xl">
+                add
+              </span>
+            </div>
+          </div>
+
+          <article
+            class="w-full absolute flex flex-col gap-4 bottom-0 text-white pl-4 pb-8 z-10 md:pl-10 md:pr-52 2xl:w-[50%] 2xl:pr-0 2xl:pb-16 2xl:pl-16"
           >
             <img
               src="../img/slideShow-header-1.png"
               alt=""
-              class="w-40 md:w-52 2xl:w-80 2xl:mb-6"
+              class="w-40 md:w-52 2xl:w-72 2xl:mb-8"
             />
             <p class="text-[0.6rem] font-bold md:text-sm">
               EGS Exclusive - Out Now
             </p>
             <p
-              class="font-bold leading-5 md:text-lg md:leading-6 2xl:leading-7"
+              class="font-bold leading-5 md:text-lg md:leading-6 2xl:leading-7 2xl:max-w-xs"
             >
               Uncover the truth behind the outbreak and discover who or what you
               are.
             </p>
             <div
-              class="flex flex-col font-semibold leading-5 2xl:flex-row gap-2 2xl:font-medium"
+              class="flex flex-col font-semibold leading-3 2xl:flex-row gap-2 2xl:font-medium"
             >
               <p>Starting at</p>
               <p>Php 2,199.00</p>
             </div>
-            <button
-              class="hidden 2xl:block bg-white text-black rounded-sm mr-auto py-3 px-8 uppercase text-xs -mt-2"
-            >
-              buy now
-            </button>
-          </div>
+
+            <div class="hidden 2xl:flex gap-2">
+              <button
+                class="block font-medium bg-white text-black rounded-sm py-3 px-4 uppercase text-sm -mt-2"
+              >
+                pre-purchase now
+              </button>
+              <button
+                class="flex items-center gap-2 font-medium hover:bg-white/20 text-white rounded-sm py-3 px-7 uppercase text-xs -mt-2 transition-all duration-200"
+              >
+                <div
+                  class="h-5 w-5 rounded-full border-2 border-white flex justify-center items-center"
+                >
+                  <span class="material-symbols-outlined text-sm font-bold">
+                    add
+                  </span>
+                </div>
+                add to wishlist
+              </button>
+            </div>
+          </article>
           <div class="absolute h-full w-full top-0 left-0 bg-img"></div>
-        </div>
-        <div
+        </div> -->
+        <!-- <div
           class="grow-0 shrink-0 h-full w-96 snap-center bg-stone-300 rounded-2xl md:w-[85%] relative overflow-hidden lg:w-[100%]"
           id="page-2"
         ></div>
@@ -379,7 +407,7 @@
         <div
           class="grow-0 shrink-0 h-full w-96 snap-center bg-stone-700 rounded-2xl md:w-[85%] relative overflow-hidden lg:w-[100%]"
           id="page-6"
-        ></div>
+        ></div> -->
       </div>
 
       <div
@@ -457,7 +485,7 @@
           </li> -->
         </ul>
       </div>
-    </div>
+    </section>
 
     <!-- end of slide show -->
   </body>
