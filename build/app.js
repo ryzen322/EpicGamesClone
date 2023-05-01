@@ -65,7 +65,7 @@ async function getData() {
 
     const html = `
     <li
-    class="2xl:flex items-center 2xl:gap-3 text-white font-semibold 2xl:h-[106.66px] 2xl:w-full hover:bg-[#252525] group rounded-xl z-30 overflow-hidden relative 2xl:p-3 cursor-pointer " id="showImg--${
+    class="2xl:flex items-center 2xl:gap-3 text-white font-semibold 2xl:h-[106.66px] 2xl:w-full hover:bg-[#252525] group rounded-xl z-30 overflow-hidden relative 2xl:p-2 cursor-pointer " id="showImg--${
       index + 1
     }"
   >
@@ -73,7 +73,7 @@ async function getData() {
       class="hidden 2xl:block absolute w-0 h-full top-0 left-0 bg-[#363636]   cursor-pointer transition-all duration-1000"
     id="groupHover"></div>
     <figure
-      class="hidden 2xl:block 2xl:h-full w-[30%] rounded-lg relative overflow-hidden"
+      class="hidden 2xl:block 2xl:h-full w-[30%] rounded-lg relative overflow-hidden flex-none"
     >
       <img
         src="${bgIcons}"
@@ -292,7 +292,7 @@ async function getData() {
     }, 2500);
   }
 
-  startInterVal();
+  // startInterVal();
 }
 getData();
 
@@ -454,4 +454,130 @@ slideShowData.forEach((element, index) => {
 </div>`;
 
   mainSlideShow.insertAdjacentHTML("beforeend", html);
+});
+
+// Games on Sale
+
+const gamesData = document.querySelector("#GamesData");
+
+const gamesDataItem = [
+  {
+    imgBg: "../img/Games-item-1.png",
+    title: "brable the mountainking",
+    game: "base game",
+    price: 749.99,
+    discount: 10,
+  },
+  {
+    imgBg: "../img/Games-item-2.png",
+    title: "evil dead: the game - game of the year edition",
+    game: "Edition",
+    price: 1850,
+    discount: 34,
+  },
+  {
+    imgBg: "../img/Games-item-3.png",
+    title: "watch dogs: legion standard edition",
+    game: "base game",
+    price: 2200,
+    discount: 80,
+  },
+  {
+    imgBg: "../img/Games-item-4.png",
+    title: "locks quest",
+    game: "base game",
+    price: 419.99,
+    discount: 0,
+  },
+  {
+    imgBg: "../img/Games-item-5.png",
+    title: "for honor standar edition",
+    game: "base game",
+    price: 1100,
+    discount: 75,
+  },
+  {
+    imgBg: "../img/Games-item-6.png",
+    title: "endling - extinction is forever",
+    game: "base game",
+    price: 739.95,
+    discount: 0,
+  },
+];
+
+gamesDataItem.forEach(({ imgBg, title, price, discount, game }) => {
+  const discountedPrice = price * `0.${discount}`;
+  const deductedPrice = price - discountedPrice;
+
+  function paragraphjsx(element) {
+    const paragraph = `     <p
+    class="px-3 pt-[0.35rem] pb-[0.35rem] font-medium rounded-sm bg-blue-500/90 text-white text-[0.6rem]"
+  >
+    -${element} %
+  </p>`;
+
+    return paragraph;
+  }
+
+  const discountjxs = discount === 0 ? `` : paragraphjsx(discount);
+
+  const discountedJsx =
+    discount === 0
+      ? ``
+      : `<p class="text-white font-semibold text-base">₱${deductedPrice.toFixed(
+          2
+        )}</p>`;
+
+  const html = `<li
+  class="w-[18rem] h-full  flex flex-col grow-0 shrink-0 rounded-lg snap-center snap-always overflow-hidden relative md:w-[30rem]  xl:w-[12rem] 2xl:w-[14rem]"
+>
+  <picture>
+    <img
+      src="${imgBg}"
+      alt="Games Sale"
+      class="w-full h-[100%]  block object-cover rounded-lg opacity-90 hover:opacity-100 cursor-pointer transition-all duration-200 relative md:h-full 2xl:h-[100%]"
+
+    />
+  </picture>
+
+  <div
+    class="absolute h-7 w-7 bg-black border-2 border-b-gray-50 rounded-full top-3 right-3 flex justify-center items-center p-2 cursor-pointer"
+  >
+    <span
+      class="material-symbols-outlined text-white text-2xl font-bold"
+    >
+      add
+    </span>
+  </div>
+
+  <article class="flex flex-col mt-2 gap-1 grow ">
+    <p class="uppercase text-stone-500 text-[0.6rem] font-extrabold">
+      ${game}
+    </p>
+    <h1 class="text-stone-200 font-semibold capitalize text-base 2xl:text-lg 2xl:font-medium 2xl:leading-5">
+  ${title}
+    </h1>
+    <div class="flex items-center gap-3 mt-1">
+    
+
+
+    ${discountjxs}
+
+
+      <p class=" ${
+        discount === 0 ? "text-white" : "text-stone-400 "
+      } font-semibold text-base  ${discount === 0 ? "" : "line-through"}">
+        ₱${price}
+      </p>
+
+
+      ${discountedJsx}
+
+
+
+    </div>
+  </article>
+</li> `;
+
+  gamesData.insertAdjacentHTML("beforeend", html);
 });
