@@ -235,7 +235,7 @@ async function getData() {
 
         negNumber = 7;
 
-        setTimeout(startInterVal, 2500);
+        setTimeout(startInterVal, 0);
       }
     }, 2500);
   }
@@ -287,7 +287,7 @@ async function getData() {
 
         number = 0;
 
-        setTimeout(decrement, 2500);
+        setTimeout(decrement, 0);
       }
     }, 2500);
   }
@@ -581,3 +581,45 @@ gamesDataItem.forEach(({ imgBg, title, price, discount, game }) => {
 
   gamesData.insertAdjacentHTML("beforeend", html);
 });
+
+const store = document.querySelector("#store");
+
+const itemStore = [
+  {
+    title: "Alience: Dark Descent",
+    description:
+      "Drop into the gripping journey of Alience: Dark Descent, a squad-based, single-player action game in the iconic Alien franchise ",
+    price: "₱1,350",
+    img: "../img/scroll-img-0.png",
+  },
+  {
+    title: "NIS America: Golden Week 2023 Sale",
+    description: "Save big on these Japan developed titles!",
+    price: "Save Now",
+    img: "../img/scroll-img-1.png",
+  },
+  {
+    title: "Hogwarts Legacy",
+    description:
+      "Take control and be at the center of your own adventure in the wizarding world.",
+    price: "₱2,500",
+    img: "../img/scroll-img-2.png",
+  },
+];
+
+itemStore.forEach(({ title, description, price, img }) => {
+  const html = ` <div class="h-[25rem] w-[25rem] snap-center shrink-0 grow-0  p-2 flex flex-col gap-3  md:w-[38rem] md:h-[35rem]  2xl:w-[33.33%] 2xl:h-[26rem] ">
+  <figure class="w-full h-[12.5rem] rounded-2xl cursor-pointer md:h-[70%] 2xl:h-[60%]">
+    <img src="${img}" alt="" class="w-full h-full object-cover rounded-2xl opacity-80 hover:opacity-100 transition-all duration-200">
+  </figure>
+ <div class="w-full h-[11rem] p-3 flex flex-col  2xl:h-[35%] 2xl:flex-1">
+  <h1 class="text-stone-300 text-[1.15rem] font-bold">${title}</h1>
+  <p class="text-stone-400  text-base font-semibold leading-5 mt-2">${description} </p>
+  <p class="mt-auto text-white font-semibold text-xl">${price}</p>
+ </div>
+</div>`;
+
+  store.insertAdjacentHTML("beforeend", html);
+});
+
+const sample = document.querySelector("#mainSlideShow").offsetHeight;
