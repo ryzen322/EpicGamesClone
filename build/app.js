@@ -622,4 +622,250 @@ itemStore.forEach(({ title, description, price, img }) => {
   store.insertAdjacentHTML("beforeend", html);
 });
 
-const sample = document.querySelector("#mainSlideShow").offsetHeight;
+const showcaseArray = [
+  {
+    bgIcons: "../img/sidebar-icons-1.png",
+    title: "Dead Island 2",
+  },
+  {
+    bgIcons: "../img/sidebar-icons-2.png",
+    title: "Honkai: Star Rail",
+  },
+  {
+    bgIcons: "../img/sidebar-icons-3.png",
+    title: "STAR WARS JEDI: Survivor™",
+  },
+  {
+    bgIcons: "../img/sidebar-icons-4.png",
+    title: "Redfall",
+  },
+  {
+    bgIcons: "../img/sidebar-icons-5.png",
+    title: "Age of Wonders 4",
+  },
+  {
+    bgIcons: "../img/sidebar-icons-6.png",
+    title: "Crime Boss: Rockay City",
+  },
+];
+
+const showcase = document.querySelector("#showcase");
+
+showcaseArray.forEach((element, index) => {
+  const { bgIcons, title } = element;
+
+  const html = `  <div class="w-[1rem] h-[1rem]  cursor-pointer bg-white rounded-full 2xl:h-[6.66rem] 2xl:w-full 2xl:rounded-md 2xl:relative 2xl:overflow-hidden  2xl:p-2 flex items-center gap-2  2xl:bg-[#121212] 2xl:hover:bg-[#363636]/20 " id="event-${
+    index + 1
+  }">
+  <div class="hidden 2xl:block absolute top-0 left-0 w-0 h-full bg-[#2A2A2A]  transition-all duration-1000 ease-in" id="hover"></div>
+  <div class="hidden  2xl:block relative z-30 h-[5.7rem] w-[4.5rem] overflow-hidden rounded-lg">
+    <img src="${bgIcons}" alt="" class="hidden 2xl:block w-full h-full object-cover">
+  </div>
+  <h1 class="hidden 2xl:block flex-1 z-30 text-stone-300 font-semibold">${title}</h1>
+</div>`;
+
+  showcase.insertAdjacentHTML("beforeend", html);
+});
+
+const eventData1 = document.querySelector("#event-1");
+const eventData2 = document.querySelector("#event-2");
+const eventData3 = document.querySelector("#event-3");
+const eventData4 = document.querySelector("#event-4");
+const eventData5 = document.querySelector("#event-5");
+const eventData6 = document.querySelector("#event-6");
+
+const img1 = document.querySelector("#img-1");
+const img2 = document.querySelector("#img-2");
+const img3 = document.querySelector("#img-3");
+const img4 = document.querySelector("#img-4");
+const img5 = document.querySelector("#img-5");
+const img6 = document.querySelector("#img-6");
+
+function removeState(img) {
+  img.classList.replace("translate-x-0", "translate-x-24");
+  img.classList.replace("opacity-100", "opacity-0");
+}
+
+function setState(img) {
+  img.classList.replace("translate-x-24", "translate-x-0");
+  img.classList.replace("opacity-0", "opacity-100");
+}
+function removeFirstEl() {
+  setState(img1);
+
+  removeState(img2);
+  removeState(img3);
+  removeState(img4);
+  removeState(img5);
+  removeState(img6);
+}
+
+function removeSecondEl() {
+  setState(img2);
+
+  removeState(img1);
+  removeState(img3);
+  removeState(img4);
+  removeState(img5);
+  removeState(img6);
+}
+function removeThirdEl() {
+  setState(img3);
+
+  removeState(img1);
+  removeState(img2);
+  removeState(img4);
+  removeState(img5);
+  removeState(img6);
+}
+function removeFourthEl() {
+  setState(img4);
+
+  removeState(img1);
+  removeState(img2);
+  removeState(img3);
+  removeState(img5);
+  removeState(img6);
+}
+function removeFithEl() {
+  setState(img5);
+
+  removeState(img1);
+  removeState(img2);
+  removeState(img3);
+  removeState(img4);
+  removeState(img6);
+}
+function removeSixEl() {
+  setState(img6);
+
+  removeState(img1);
+  removeState(img2);
+  removeState(img3);
+  removeState(img4);
+  removeState(img5);
+}
+
+eventData1.addEventListener("click", function () {
+  removeFirstEl();
+});
+
+eventData2.addEventListener("click", function () {
+  removeSecondEl();
+});
+
+eventData3.addEventListener("click", function () {
+  removeThirdEl();
+});
+eventData4.addEventListener("click", function () {
+  removeFourthEl();
+});
+eventData5.addEventListener("click", function () {
+  removeFithEl();
+});
+eventData6.addEventListener("click", function () {
+  removeSixEl();
+});
+
+function addHover(element) {
+  const hover = element.querySelector("#hover");
+  element.classList.replace("2xl:bg-[#121212]", "2xl:bg-[#363636]/20");
+  hover.classList.replace("w-0", "w-full");
+}
+
+// addHover(eventData1);
+
+function removeHover(element) {
+  element.classList.replace("2xl:bg-[#363636]/20", "2xl:bg-[#121212]");
+  const hover = element.querySelector("#hover");
+  hover.classList.replace("w-full", "w-0");
+}
+number = 0;
+decrement = 7;
+
+function startDecrement() {
+  const decrementTime = setInterval(() => {
+    decrement -= 1;
+
+    if (decrement === 6) {
+      removeHover(eventData6);
+      addHover(eventData5);
+      removeFithEl();
+    }
+    if (decrement === 5) {
+      removeHover(eventData5);
+      addHover(eventData4);
+      removeFourthEl();
+    }
+    if (decrement === 4) {
+      removeHover(eventData4);
+      addHover(eventData3);
+      removeThirdEl();
+    }
+    if (decrement === 3) {
+      removeHover(eventData3);
+      addHover(eventData2);
+      removeSecondEl();
+    }
+    if (decrement === 2) {
+      removeHover(eventData2);
+      addHover(eventData1);
+      removeFirstEl();
+    }
+    if (decrement === 1) {
+    }
+
+    if (decrement === 0) {
+      clearInterval(decrementTime);
+
+      decrement = 7;
+      setTimeout(startHoverData, 0);
+    }
+  }, 2500);
+}
+
+function startHoverData() {
+  const startInt = setInterval(() => {
+    number += 1;
+
+    if (number === 1) {
+      addHover(eventData1);
+      removeHover(eventData6);
+      removeFirstEl();
+    }
+
+    if (number === 2) {
+      addHover(eventData2);
+      removeHover(eventData1);
+      removeSecondEl();
+    }
+    if (number === 3) {
+      addHover(eventData3);
+      removeHover(eventData2);
+      removeThirdEl();
+    }
+    if (number === 4) {
+      addHover(eventData4);
+      removeHover(eventData3);
+      removeFourthEl();
+    }
+    if (number === 5) {
+      addHover(eventData5);
+      removeHover(eventData4);
+      removeFirstEl();
+    }
+    if (number === 6) {
+      addHover(eventData6);
+      removeHover(eventData5);
+      removeSixEl();
+    }
+    if (number === 7) {
+      clearInterval(startInt);
+
+      number = 1;
+      setTimeout(startDecrement, 0);
+    }
+  }, 2500);
+}
+
+startHoverData();
