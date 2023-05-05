@@ -214,7 +214,7 @@
     </nav>
 
     <div
-      class="container mx-auto h-20 flex items-center px-5 relative lg:w-[80%]"
+      class="container mx-auto h-20 flex items-center px-5 sticky top-0 left-0 z-[45] lg:w-[80%]  bg-[#121212]"
     >
       <div
         class="hidden bg-[#202020] p-2 items-center rounded-3xl gap-2 mr-5 lg:flex"
@@ -308,10 +308,10 @@
     <!-- slide show -->
 
     <section
-      class="mt-5 container mx-auto h-[35rem] w-full px-5  flex flex-col gap-4 md:h-[53.5rem] lg:flex-row lg:h-[25rem] 2xl:h-[40rem] 2xl:px-0"
+      class="mt-5 container mx-auto h-[35rem] w-full px-5  flex flex-col gap-4 md:h-[53.5rem] lg:flex-row lg:h-[25rem] 2xl:h-[40rem] 2xl:px-2"
     >
       <div
-        class="h-[90%] cursor-pointer w-full flex   items-center overflow-x-scroll gap-3 snap-x snap-mandatory scrollbar-hide lg:h-full lg:gap-0 2xl:w-4/5 2xl:gap-2"
+        class="h-[90%] cursor-pointer w-full flex scroll-pb-[2000px] items-center overflow-x-scroll gap-3 snap-x snap-mandatory scrollbar-hide lg:h-full lg:gap-0 2xl:w-4/5 2xl:gap-2"
         id="mainSlideShow"
       >
         <!-- <div
@@ -591,7 +591,7 @@
 
         </div>
 
-        <div class="w-full h-full bg-green-400 absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-2">
+        <div class="w-full h-full absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-2">
 
           <picture>
             <source
@@ -605,7 +605,7 @@
         </div>
         
 
-        <div class="w-full h-full bg-green-400 absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-3">
+        <div class="w-full h-full absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-3">
 
           <picture>
             <source
@@ -618,7 +618,7 @@
 
         </div>
         
-        <div class="w-full h-full bg-green-400 absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-4">
+        <div class="w-full h-full absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-4">
 
           <picture>
             <source
@@ -631,7 +631,7 @@
 
         </div>
 
-        <div class="w-full h-full bg-green-400 absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-5">
+        <div class="w-full h-full absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-5">
 
           <picture>
             <source
@@ -643,7 +643,7 @@
           </picture>
 
         </div>
-        <div class="w-full h-full bg-green-400 absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-6">
+        <div class="w-full h-full absolute translate-x-24 opacity-0 transition-all duration-300 ease-out" id="img-6">
 
           <picture>
             <source
@@ -680,6 +680,80 @@
     </section>
 
     <!-- end of slideshow -2 -->
+
+
+    <section class="container mx-auto bg-[#2A2A2A] p-4 mb-5">
+      <header class="flex justify-between items-center h-[4rem] text-white">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[2.5rem]">
+            token
+            </span>
+            <h1 class="text-lg font-medium">Free Games</h1>
+        </div>
+        <button class="border border-stone-400 rounded-md font-semibold px-5 py-2 uppercase text-xs hover:bg-stone-400/50 transition-all duration-150">
+          view more
+        </button>
+      </header>
+
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-4 2xl:grid-cols-5" id="myStore">
+   
+       
+      </div>
+
+
+    </section>
+
+    <section class="container mx-auto w-full mt-8  mb-4 p-4 gap-1 flex overflow-x-scroll scrollbar-hide md:overflow-x-hidden md:p-2">
+
+      <div class="flex flex-col w-[20rem] px-4 border-r border-stone-700 grow-0 shrink-0 md:w-2/6 md:px-1 2xl:px-4">
+        
+        <header class="flex items-center justify-between text-white mb-6 2xl:mb-2">
+          <h1 class="text-lg capitalize font-semibold 2xl:text-2xl">top sellers</h1>
+          <button class="uppercase text-[0.6rem] border border-stone-500 rounded-md py-2 px-5 hover:bg-stone-500/50 2xl:text-xs 2xl:font-semibold">view more</button>
+        </header>
+
+        <section id="mostpopular">
+      
+        </section>
+
+      </div>
+
+      <div class="flex flex-col w-[20rem] px-4 border-r border-stone-700 grow-0 shrink-0 md:w-2/6 md:px-1 2xl:px-4">
+        
+        <header class="flex items-center justify-between text-white mb-6 2xl:mb-2">
+          <h1 class="text-lg capitalize font-semibold 2xl:text-2xl">most played</h1>
+          <button class="uppercase text-[0.6rem] border border-stone-500 rounded-md py-2 px-5 hover:bg-stone-500/50 2xl:text-xs 2xl:font-semibold">view more</button>
+        </header>
+
+        <section id="mostpopular">
+      
+        </section>
+
+      </div>
+      <div class="flex flex-col w-[20rem] px-4 border-r border-stone-700 grow-0 shrink-0 md:w-2/6 md:px-1 2xl:px-4">
+        
+        <header class="flex items-center justify-between text-white mb-6 2xl:mb-2">
+          <h1 class="text-lg capitalize font-semibold 2xl:text-2xl">Top Upcoming Wishlisted</h1>
+          <button class="uppercase text-[0.6rem] border border-stone-500 rounded-md py-2 px-5 hover:bg-stone-500/50 2xl:text-xs 2xl:font-semibold">view more</button>
+        </header>
+
+        <section id="mostpopular">
+      
+        </section>
+
+      </div>
+     
+   
+   
+  
+      
+     
+
+      
+
+    </section>
+
+
 
   </body>
   <script src="app.js"></script>

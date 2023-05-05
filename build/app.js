@@ -65,7 +65,7 @@ async function getData() {
 
     const html = `
     <li
-    class="2xl:flex items-center 2xl:gap-3 text-white font-semibold 2xl:h-[106.66px] 2xl:w-full hover:bg-[#252525] group rounded-xl z-30 overflow-hidden relative 2xl:p-2 cursor-pointer " id="showImg--${
+    class="2xl:flex items-center 2xl:gap-3 text-white font-semibold 2xl:h-[106.66px] 2xl:w-full hover:bg-[#252525] group rounded-xl z-10 overflow-hidden relative 2xl:p-2 cursor-pointer " id="showImg--${
       index + 1
     }"
   >
@@ -654,7 +654,7 @@ const showcase = document.querySelector("#showcase");
 showcaseArray.forEach((element, index) => {
   const { bgIcons, title } = element;
 
-  const html = `  <div class="w-[1rem] h-[1rem]  cursor-pointer bg-white rounded-full 2xl:h-[6.66rem] 2xl:w-full 2xl:rounded-md 2xl:relative 2xl:overflow-hidden  2xl:p-2 flex items-center gap-2  2xl:bg-[#121212] 2xl:hover:bg-[#363636]/20 " id="event-${
+  const html = `  <div class="w-[1rem] h-[1rem] z-10  cursor-pointer bg-white rounded-full 2xl:h-[6.66rem] 2xl:w-full 2xl:rounded-md 2xl:relative 2xl:overflow-hidden  2xl:p-2 flex items-center gap-2  2xl:bg-[#121212] 2xl:hover:bg-[#363636]/20 " id="event-${
     index + 1
   }">
   <div class="hidden 2xl:block absolute top-0 left-0 w-0 h-full bg-[#2A2A2A]  transition-all duration-1000 ease-in" id="hover"></div>
@@ -869,3 +869,266 @@ function startHoverData() {
 }
 
 startHoverData();
+
+const myStore = document.querySelector("#myStore");
+
+const myStoreArray = [
+  {
+    img: "../img/store-games-1.png",
+    play: "free now",
+    header: "Breadthedge",
+    text: "Free Now - May 04 11:00 PM",
+  },
+  {
+    img: "../img/store-games-2.png",
+    play: "free now",
+    header: "Poker Club",
+    text: "Free Now - May 04 11:00 PM",
+  },
+  {
+    img: "../img/store-games-3.png",
+    play: "comming soon",
+    header: "Againts All Odds",
+    text: "Free Now - May 11",
+  },
+  {
+    img: "../img/store-games-4.png",
+    play: "comming soon",
+    header: "Horizon Chase Turobo",
+    text: "Free Now - May 11",
+  },
+  {
+    img: "../img/store-games-5.png",
+    play: "comming soon",
+    header: "Kao the Kangaroo",
+    text: "Free Now - May 11",
+  },
+];
+
+myStoreArray.forEach(({ img, play, header, text }) => {
+  const html = `<div class="h-[23rem] rounded-md overflow-hidden flex flex-col sm:h-[30rem] md:h-[21rem] 2xl:h-[30rem]">
+
+  <figure class="h-[75%] w-full bg-stone-700 md:h-[65%] 2xl:h-[75%]">
+    <img src="${img}" alt="" class="h-full w-full object-cover ">
+  </figure>
+  <div class="${
+    play === "free now" ? "bg-blue-500" : "bg-black"
+  } w-full h-[1.7rem] flex justify-center items-center rounded-bl-sm rounded-br-sm 2xl:py-4 ">
+    <p class="uppercase text-white text-xs font-bold 2xl:text-sm">${play}</p>
+  </div>
+
+  <div class="flex-1 flex flex-col justify-end">
+    <h1 class="text-white font-semibold text-base 2xl:text-lg">${header}</h1>
+    <p class="text-sm text-stone-500 font-semibold 2xl:text-lg">${text}</p>
+  </div>
+
+</div>`;
+
+  myStore.insertAdjacentHTML("beforeend", html);
+});
+
+const mostpopular = document.querySelectorAll("#mostpopular");
+
+const mostpopularItem = [
+  {
+    title: "Dead Island 2",
+    img: "../img/most-played-1.png",
+    price: "₱2,199",
+  },
+  {
+    title: "STAR WARS Jedi: Survivor™",
+    img: "../img/most-played-2.png",
+    price: "₱2,999",
+  },
+  {
+    title: "Grand Theft Auto V: Premium Edition",
+    img: "../img/most-played-3.png",
+    price: "₱996",
+  },
+  {
+    title: "Redfall",
+    img: "../img/most-played-4.png",
+    price: "₱2,099.99",
+  },
+  {
+    title: "KINGDOM HEARTS HD 1.5+2.5 ReMIX",
+    img: "../img/most-played-5.png",
+    price: "₱1,075",
+  },
+
+  // item next column
+
+  {
+    title: "Fortnite",
+    img: "../img/most-played-6.png",
+    price: "Free",
+  },
+  {
+    title: "Rocket League®™",
+    img: "../img/most-played-7.png",
+    price: "Free",
+  },
+  {
+    title: "Grand Theft Auto V: Premium Edition",
+    img: "../img/most-played-3.png",
+    price: "₱996",
+  },
+  {
+    title: "Dying Light Enchanced Edition",
+    img: "../img/most-played-8.png",
+    price: "849",
+  },
+  {
+    title: "Valorant",
+    img: "../img/most-played-9.png",
+    price: "Free",
+  },
+
+  // item next column
+
+  {
+    title: "Assassin's Creed® Mirage",
+    img: "../img/most-played-10.png",
+    price: "",
+    availability: "coming soon",
+  },
+  {
+    title: "The Lord of The Rings Return to Moria",
+    img: "../img/most-played-11.png",
+    price: "",
+    availability: "Available 2023",
+  },
+  {
+    title: "Witchfire",
+    img: "../img/most-played-12.png",
+    price: "",
+    availability: "coming soon",
+  },
+  {
+    title: "Homeworld 3",
+    img: "../img/most-played-13.png",
+    price: "",
+    availability: "coming soon",
+  },
+  {
+    title: "Tower of Fantasy",
+    img: "../img/most-played-14.png",
+    price: "",
+    availability: "coming soon",
+  },
+];
+
+const topSellerArray = [...mostpopularItem];
+const mostplayedArray = [...mostpopularItem];
+const topUpcomingArray = [...mostpopularItem];
+
+topSellerArray.splice(0, 5).forEach(({ title, img, price }) => {
+  const html = `
+  <article class="w-full h-[6.5rem]  rounded-2xl flex items-center gap-3 p-4  cursor-pointer hover:bg-[#2A2A2A] transition-all duration-200 group md:p-2 2xl:h-[11rem] 2xl:pl-8 2xl:py-4 2xl:gap-5">
+
+
+  <figure class="h-[5rem] w-[4rem] bg-stone-700 overflow-hidden rounded-md relative 2xl:h-[100%] 2xl:w-[6.5rem] "> 
+
+
+    <img src="${img}" alt="" class=" h-full w-full object-cover absolute top-0 left-0"> 
+
+
+  <div class=" relative w-5 h-5 rounded-full bg-black border-2 border-b-white left-[2.5rem] top-[.4rem] flex 
+  justify-center items-center opacity-0 group-hover:opacity-100 2xl:left-[4.5rem] 2xl:top-[.5rem] 2xl:h-[1.5rem] 2xl:w-[1.5rem]">
+
+
+    <span class="material-symbols-outlined text-white font-bold text-sm 2xl:text-lg">
+      add
+      </span>
+
+      
+  </div>            
+  </figure>
+  
+  <div class="flex-1 text-stone-300  h-[5rem] flex flex-col justify-center gap-2">
+    <h1 class="font-bold text-base leading-5 md:text-sm 2xl:text-lg 2xl:font-semibold">${title}</h1>
+    <p class="font-semibold text-sm md:text-xs 2xl:text-base">${price}</p>
+  </div>
+
+</article>
+  `;
+
+  mostpopular[0].insertAdjacentHTML("beforeend", html);
+});
+
+mostplayedArray.splice(5, 5).forEach(({ title, img, price }) => {
+  const html = `
+  <article class="w-full h-[6.5rem]  rounded-2xl flex items-center gap-3 p-4  cursor-pointer hover:bg-[#2A2A2A] transition-all duration-200 group md:p-2 2xl:h-[11rem] 2xl:pl-8 2xl:py-4 2xl:gap-5">
+
+
+  <figure class="h-[5rem] w-[4rem] bg-stone-700 overflow-hidden rounded-md relative 2xl:h-[100%] 2xl:w-[6.5rem] "> 
+
+
+    <img src="${img}" alt="" class=" h-full w-full object-cover absolute top-0 left-0"> 
+
+
+  <div class=" relative w-5 h-5 rounded-full bg-black border-2 border-b-white left-[2.5rem] top-[.4rem] flex 
+  justify-center items-center opacity-0 group-hover:opacity-100 2xl:left-[4.5rem] 2xl:top-[.5rem] 2xl:h-[1.5rem] 2xl:w-[1.5rem]">
+
+
+    <span class="material-symbols-outlined text-white font-bold text-sm 2xl:text-lg">
+      add
+      </span>
+
+      
+  </div>            
+  </figure>
+  
+  <div class="flex-1 text-stone-300  h-[5rem] flex flex-col justify-center gap-2">
+    <h1 class="font-bold text-base leading-5 md:text-sm 2xl:text-lg 2xl:font-semibold">${title}</h1>
+    <p class="font-semibold text-sm md:text-xs 2xl:text-base">${price}</p>
+  </div>
+
+</article>
+  `;
+
+  mostpopular[1].insertAdjacentHTML("beforeend", html);
+});
+
+topUpcomingArray
+  .splice(10, 10)
+  .forEach(({ title, img, price, availability }) => {
+    const html = `
+  <article class="w-full h-[6.5rem]  rounded-2xl flex items-center gap-3 p-4  cursor-pointer hover:bg-[#2A2A2A] transition-all duration-200 group md:p-2 2xl:h-[11rem] 2xl:pl-8 2xl:py-4 2xl:gap-5">
+
+
+  <figure class="h-[5rem] w-[4rem] bg-stone-700 overflow-hidden rounded-md relative 2xl:h-[100%] 2xl:w-[6.5rem] "> 
+
+
+    <img src="${img}" alt="" class=" h-full w-full object-cover absolute top-0 left-0"> 
+
+
+  <div class=" relative w-5 h-5 rounded-full bg-black border-2 border-b-white left-[2.5rem] top-[.4rem] flex 
+  justify-center items-center opacity-0 group-hover:opacity-100 2xl:left-[4.5rem] 2xl:top-[.5rem] 2xl:h-[1.5rem] 2xl:w-[1.5rem]">
+
+
+    <span class="material-symbols-outlined text-white font-bold text-sm 2xl:text-lg">
+      add
+      </span>
+
+      
+  </div>            
+  </figure>
+  
+  <div class="flex-1 text-stone-300  h-[5rem] flex flex-col justify-center gap-2">
+    <h1 class="font-bold text-base leading-5 md:text-sm 2xl:text-lg 2xl:font-semibold">${title}</h1>
+    ${
+      price &&
+      ` <p class="font-semibold text-sm md:text-xs 2xl:text-base">${price}</p>`
+    }
+    ${
+      availability &&
+      ` <p class="text-stone-400 font-semibold capitalize ">${availability}</p>`
+    }
+  </div>
+
+</article>
+  `;
+
+    mostpopular[2].insertAdjacentHTML("beforeend", html);
+  });
